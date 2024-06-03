@@ -34,6 +34,20 @@ def create_table():
             FOREIGN KEY(product_id) REFERENCES products(id)
     )
 """)
+    
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS sales(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER,
+        product_id INTEGER,
+        departament_id INTEGER,
+        sale_date TIMESTAMP,
+        quantity_sold INTEGER,
+        FOREIGN KEY(user_id) REFERENCES users(id),
+        FOREIGN KEY(product_id) REFERENCES products(id),
+        FOREIGN KEY(departament_id) REFERENCES departament(id)
+);
+""")
 
 
 create_table()
