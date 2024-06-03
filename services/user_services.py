@@ -46,7 +46,17 @@ def create_table():
         FOREIGN KEY(user_id) REFERENCES users(id),
         FOREIGN KEY(product_id) REFERENCES products(id),
         FOREIGN KEY(departament_id) REFERENCES departament(id)
-);
+)
+""")
+    
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS store(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        store_name VARCHAR(255),
+        store_adress VARCHAR(255),
+        manager_id INTEGER,
+        FOREIGN KEY(manager_id) REFERENCES users(id)
+    )
 """)
 
 
