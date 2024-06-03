@@ -25,6 +25,15 @@ def create_table():
             FOREIGN KEY(user_id) REFERENCES users(id)       
     )
 """)
+    
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS departament(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            departament_name VARCHAR(255),
+            product_id INTEGER,
+            FOREIGN KEY(product_id) REFERENCES products(id)
+    )
+""")
 
 
 create_table()
