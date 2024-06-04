@@ -97,6 +97,13 @@ def atualizar_produto():
     """,[produto, preco, quantidade, id])
     connection.commit()
 
+def criar_departamento():
+    nome = input("Digite o nome do novo departamento: ")
+    cursor.execute("""
+    INSERT INTO departament(departament_name) VALUES (?)
+""",[nome])
+    connection.commit()
+
 def busca():
     busca = input("Digite o nome do produto a ser buscado: ")
     
@@ -113,7 +120,9 @@ def tela_sistema():
 3 - Ver produtos
 4 - Remover produto
 5 - Buscar produto
-6 - Sair do sistema""")
+6 - Criar departamento
+7 - Buscar produto por departamento
+8 - Sair do sistema""")
         while True:
             try:
                 choice = int(input(""))
@@ -131,6 +140,8 @@ def tela_sistema():
         elif choice == 5:
             busca()
         elif choice == 6:
+            criar_departamento()
+        elif choice == 8:
             break
         else:
             print("Opção inválida")
