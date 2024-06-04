@@ -104,6 +104,18 @@ def criar_departamento():
 """,[nome])
     connection.commit()
 
+def registrar_venda():
+    while True:
+        try:
+            id = int(input("Digite o ID do produto a ser comprado: "))
+            break
+        except ValueError:
+            print("Valor inválido")
+    quantity = int(input("Digite a quantidade a ser comprada: "))
+    cursor.execute(f"UPDATE products SET quantity = quantity - {quantity} WHERE id = {id}")
+    connection.commit()
+
+
 def busca():
     busca = input("Digite o nome do produto a ser buscado: ")
     
@@ -122,7 +134,8 @@ def tela_sistema():
 5 - Buscar produto
 6 - Criar departamento
 7 - Buscar produto por departamento
-8 - Sair do sistema""")
+8 - Registrar venda
+9 - Sair do sistema""")
         while True:
             try:
                 choice = int(input(""))
@@ -141,7 +154,12 @@ def tela_sistema():
             busca()
         elif choice == 6:
             criar_departamento()
+        elif choice == 7:
+            pass
         elif choice == 8:
+            registrar_venda()
+            pass
+        elif choice == 9:
             break
         else:
             print("Opção inválida")
