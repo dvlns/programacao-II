@@ -6,4 +6,4 @@ Também é utilizado criptografia com a biblioteca BCrypt para proteger a senha 
 <h2>Esquema do Banco</h2>
 
 
-![er-diagram](https://github.com/dvlns/programacao-II/assets/141285951/99872a52-8130-42e3-add0-0fd891f1b30d)
+![er](https://github.com/dvlns/programacao-II/assets/141285951/c8f2a2b6-7bcd-48c3-90f2-e3c93fb03b19)
