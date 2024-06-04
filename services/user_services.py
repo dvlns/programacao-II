@@ -3,7 +3,7 @@ import sqlite3
 connection = sqlite3.connect("database.db")
 cursor = connection.cursor()
 
-def create_table():
+def create_tables():
     connection = sqlite3.connect("database.db")
     cursor = connection.cursor()
 
@@ -60,4 +60,3 @@ def create_table():
 """)
 
 
-create_table()

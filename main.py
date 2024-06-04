@@ -1,6 +1,8 @@
 from utils.user_utils import login, user_register
+from services.user_services import create_tables
 
 def main():
+    create_tables()
     while True:
         print("""
 1 - Login 
